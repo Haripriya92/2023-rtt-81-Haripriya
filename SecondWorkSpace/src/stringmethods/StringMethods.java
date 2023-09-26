@@ -1,5 +1,7 @@
 package stringmethods;
 
+import java.util.Arrays;
+
 public class StringMethods {
 	/**
 	 * Length method
@@ -111,15 +113,17 @@ public class StringMethods {
 	 * 
 	 * @param args
 	 */
-	/*
-	 * public void splitMethod() { String vowels = "a::b::c::d:e";
-	 * 
-	 * // splitting the string at "::" // storing the result in an array of strings
-	 * String[] result = vowels.split("::");
-	 * 
-	 * // converting array to string and printing it System.out.println("result = "
-	 * + result); }
-	 */
+
+	public void splitMethod() {
+		String vowels = "a::b::c::d:e";
+
+		// splitting the string at "::" // storing the result in an array of strings
+		String[] result = vowels.split("::");
+
+		// converting array to string and printing it
+		System.out.println("result = " + Arrays.toString(result));
+	}
+
 	/**
 	 * charAt() method
 	 * 
@@ -315,6 +319,7 @@ public class StringMethods {
 		st.toLowerCase();
 		st.toupperCase();
 		st.concat();
+		st.splitMethod();
 		st.charAt();
 		st.compareTo();
 		st.substringMethod();

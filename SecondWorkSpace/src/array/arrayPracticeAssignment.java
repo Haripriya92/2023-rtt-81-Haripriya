@@ -22,6 +22,11 @@ public class arrayPracticeAssignment {
 		System.out.println("---------------------------");
 	}
 
+	/**
+	 * write a for loop that starts at the final position in the array and counts
+	 * down to the first
+	 */
+
 	public void finalPositionInArray() {
 
 		int[] sampleArray = { 11, 12, 34, 5, 67, 89 };
@@ -35,6 +40,10 @@ public class arrayPracticeAssignment {
 		System.out.println("---------------------------");
 	}
 
+	/**
+	 * use letters.split(",") to make an array of letters
+	 */
+
 	public void arrayUsingplit() {
 		String sampleString = "A,B,C,D,E";
 		String[] stringArray = sampleString.split(",");
@@ -46,6 +55,9 @@ public class arrayPracticeAssignment {
 		System.out.println("---------------------------");
 	}
 
+	/**
+	 * loop over the array and count the number of letters that are not vowels
+	 */
 	public void toFindNumberOfNonVowels() {
 		String[] sampleArray = { "n", "b", "c", "g", "e" };
 		int nonVowelCount = 0;
