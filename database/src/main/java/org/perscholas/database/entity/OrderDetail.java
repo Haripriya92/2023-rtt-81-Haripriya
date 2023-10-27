@@ -19,25 +19,25 @@ public class OrderDetail {
 	@Column(name = "id")
 	private Integer id;
 
-	@Column(name = "order_id", insertable = false, updatable = false)
-	private Integer orderId;
+	/*@Column(name = "order_id", insertable = false, updatable = false)
+	private Integer orderId;*/
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "order_id", nullable = false)
 	private Order order;
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name = "order_id", nullable = false)
+	@JoinColumn(name = "product_id", nullable = false)
 	private Product product;
 
-	@Column(name = "product_id", insertable = false, updatable = false)
-	private Integer productId;
+	/*@Column(name = "product_id", insertable = false, updatable = false)
+	private Integer productId;*/
 
 	@Column(name = "quantity_ordered")
 	private Integer quantityOrdered;
 
 	@Column(name = "price_each", columnDefinition = "Decimal{10,2}")
-	private Integer priceEach;
+	private Double priceEach;
 
 	@Column(name = "order_line_number")
 	private Short orderLine;
@@ -50,21 +50,21 @@ public class OrderDetail {
 		this.id = id;
 	}
 
-	public Integer getOrderId() {
+	/*public Integer getOrderId() {
 		return orderId;
 	}
 
 	public void setOrderId(Integer orderId) {
 		this.orderId = orderId;
-	}
+	}*/
 
-	public Integer getProductId() {
+	/*public Integer getProductId() {
 		return productId;
 	}
 
 	public void setProductId(Integer productId) {
 		this.productId = productId;
-	}
+	}*/
 
 	public Integer getQuantityOrdered() {
 		return quantityOrdered;
@@ -74,11 +74,11 @@ public class OrderDetail {
 		this.quantityOrdered = quantityOrdered;
 	}
 
-	public Integer getPriceEach() {
+	public Double getPriceEach() {
 		return priceEach;
 	}
 
-	public void setPriceEach(Integer priceEach) {
+	public void setPriceEach(Double priceEach) {
 		this.priceEach = priceEach;
 	}
 

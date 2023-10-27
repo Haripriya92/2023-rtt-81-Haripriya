@@ -32,7 +32,8 @@ public class CreateAndUpdateExample {
 	}
 
 	public void insertOrderExample(int custId) {
-		if (customerDAO.findById(custId) != null) {
+		Customer c= customerDAO.findById(custId);
+		if (c != null) {
 			Order o = new Order();
 			// current date set as order date
 			Date orderDate = new Date();
@@ -49,6 +50,7 @@ public class CreateAndUpdateExample {
 				o.setRequiredDate(null);
 			}
 			//o.setCustomerId(custId);
+			o.setCustomer(c);
 			o.setShippedDate(null);
 			o.setStatus("Cancelled");
 			System.out.println("Before inserting new order " + o.getId());
@@ -98,10 +100,10 @@ public class CreateAndUpdateExample {
 		// cp.insertCustomerExample();
 		//cp.updateCustomer();
 		// cp.listQuery();
-		cp.queryOrder();
+		//cp.queryOrder();
 		System.out.println("Enter the  Customer Id: ");
 		int custId = sc.nextInt();
-		//cp.insertOrderExample(custId);
+		cp.insertOrderExample(custId);
 		sc.close();
 	}
 }

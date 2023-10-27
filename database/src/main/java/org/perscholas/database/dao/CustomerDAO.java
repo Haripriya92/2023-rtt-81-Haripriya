@@ -22,6 +22,7 @@ public class CustomerDAO {
 		query.setParameter("idVariable", id);
 		try {
 			Customer result = query.getSingleResult();
+			session.close();
 			return result;
 		} catch (NoResultException e) {
 			return null;
@@ -39,6 +40,7 @@ public class CustomerDAO {
 		query.setParameter("firstname", fname);
 
 		List<Customer> result = query.getResultList();
+		session.close();
 		return result;
 	}
 
@@ -53,7 +55,9 @@ public class CustomerDAO {
 		query.setParameter("lastname", lname);
 
 		Customer result = query.getSingleResult();
+		session.close();
 		return result;
+		
 	}
 
 	public void save(Customer save) {
@@ -62,6 +66,7 @@ public class CustomerDAO {
 		Transaction t = session.beginTransaction();
 		session.saveOrUpdate(save);
 		t.commit();
+		session.close();
 	}
 
 }

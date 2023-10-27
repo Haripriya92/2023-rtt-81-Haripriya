@@ -26,8 +26,10 @@ public class Order {
 	@Column(name = "id")
 	private Integer id;
 
-	@Column(name = "customer_id", insertable = false, updatable = false)
-	private Integer customerId;
+	/*
+	 * @Column(name = "customer_id", insertable = false, updatable = false) private
+	 * Integer customerId;
+	 */
 
 	@OneToMany(mappedBy = "order", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<OrderDetail> orderdetails;
@@ -103,14 +105,12 @@ public class Order {
 		this.comments = comments;
 	}
 
-	public Integer getCustomerId() {
-		return customerId;
-	}
-
-	public void setCustomerId(Integer customerId) {
-		this.customerId = customerId;
-	}
-
+	/*
+	 * public Integer getCustomerId() { return customerId; }
+	 * 
+	 * public void setCustomerId(Integer customerId) { this.customerId = customerId;
+	 * }
+	 */
 	public Customer getCustomer() {
 		return customer;
 	}

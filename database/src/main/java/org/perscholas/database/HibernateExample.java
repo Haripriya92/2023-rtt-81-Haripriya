@@ -47,7 +47,7 @@ public class HibernateExample {
 		// OrderDetails Table
 		OrderDetailDAO orderdetailDao = new OrderDetailDAO();
 		OrderDetail orderdetail = orderdetailDao.findById(5);
-		System.out.println(orderdetail.getId() + " | " + orderdetail.getOrderId() + " | " + orderdetail.getProductId()
+		System.out.println(orderdetail.getId() + " | " + orderdetail.getProduct().getId()
 				+ " | " + orderdetail.getQuantityOrdered());
 
 	}

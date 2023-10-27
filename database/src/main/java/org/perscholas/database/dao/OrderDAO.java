@@ -11,6 +11,7 @@ import org.hibernate.cfg.Configuration;
 import org.perscholas.database.entity.Order;
 
 public class OrderDAO {
+
 	public Order findById(Integer id) {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		Session session = factory.openSession();
@@ -24,21 +25,23 @@ public class OrderDAO {
 		return result;
 	}
 
-	public List<Order> findByCustomerId(Integer customerId){
-		 SessionFactory factory =new Configuration().configure().buildSessionFactory();
-		 Session session=factory.openSession();
-		 String hql ="From Order o WHERE o.customerId = :cusId";
-		 TypedQuery<Order> query=session.createQuery(hql,Order.class);
-		 query.setParameter("cusId", customerId);
-		 List<Order> customerOrder=query.getResultList();
-		 return customerOrder;
+	public List<Order> findByCustomerId(Integer customerId) {
+		SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		Session session = factory.openSession();
+		String hql = "From Order o WHERE o.customer.id = :cusId";
+		TypedQuery<Order> query = session.createQuery(hql, Order.class);
+		query.setParameter("cusId", customerId);
+		List<Order> customerOrder = query.getResultList();
+		session.close();
+		return customerOrder;
 	}
-	
+
 	public void save(Order save) {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 		session.saveOrUpdate(save);
 		t.commit();
+		session.close();
 	}
 }
