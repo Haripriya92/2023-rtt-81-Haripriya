@@ -68,5 +68,20 @@ public class CustomerDAO {
 		t.commit();
 		session.close();
 	}
+	public Customer updateFirstName(Integer id, String firstName) {
+		SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		Session session = factory.openSession();
+
+		Transaction t = session.beginTransaction();
+		Customer save = findById(id);
+		
+		save.setContactFirstname(firstName);
+
+		session.saveOrUpdate(save);
+		t.commit();
+		session.close();
+		
+		return save;
+	}
 
 }
