@@ -1,0 +1,8 @@
+.container {
+  height: fit-content;
+  width: 50%;
+  border: 5px solid black;
+  padding: 10px;
+  background-color: beige;
+  background-image: linear-gradient(biege, white);
+}

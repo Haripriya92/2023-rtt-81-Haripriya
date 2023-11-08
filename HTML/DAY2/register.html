@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+  </head>
+  <body>
+    <form  class="container" action="#">
+      <h1>Register Page</h1>
+      <form>
+      <label for="firstname">First Name</label>
+      <input
+        type="text"
+        name="firstname"
+        id="firstname"
+        required
+        placeholder="first name required"
+      />
+      <br /><br />
+      <label for="lastname">Last Name</label>
+      <input
+        type="text"
+        name="lastname"
+        id="lastname"
+        required
+        placeholder="last name required"
+      />
+      <br /><br />
+      <label for="email">Email</label>
+      <input
+        type="text"
+        name="email"
+        id="email"
+        required
+        placeholder="email required"
+      />
+      <br /><br />
+      <label for="password1">Password</label>
+      <input
+        type="password"
+        name="password1"
+        id="password"
+        required
+        placeholder="Password Required"
+      />
+      <br /><br />
+      <label for="password2">Confirm Password</label>
+      <input
+        type="password"
+        name="password2"
+        id="password"
+        required
+        placeholder="Password Required"
+      />
+      <br /><br />
+      <fieldset>
+        <legend>
+          Gender<br />
+          <label for="radio1"
+            >Male<input type="radio" name="radio" id="radio1"
+          /></label>
+          <label for="radio2"
+            >Female<input type="radio" name="radio" id="radio2"
+          /></label>
+        </legend>
+      </fieldset>
+      <br /><br />
+      <label for="dateofbirth">Date of Birth</label>
+      <input type="date" name="dateofbirth" id="dateofbirth" />
+      <br /><br />
+      <fieldset>
+        <legend>
+          Hobbies<br />
+          <label for="checkbox1"
+            >You like to sports<input
+              type="checkbox"
+              name="checkbox1"
+              id="checkbox1"
+          /></label>
+          <label for="checkbox2"
+            >You like to eat<input
+              type="checkbox"
+              name="checkbox2"
+              id="checkbox2"
+          /></label>
+          <label for="checkbox3"
+            >You like to sleep<input type="checkbox" name="checkbox3"
+            id="checkbox3"</label
+          >
+        </legend>
+      </fieldset>
+      <br /><br />
+      <input type="submit" name="register" value="Register" />
+      <br /><br />
+      <label for="login"> Already have a login?</label>
+      <input type="button" name="login" value="Login" />
+    </form>
+  </body>
+</html>

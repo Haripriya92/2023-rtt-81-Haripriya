@@ -1,0 +1,14 @@
+h1 {
+  text-align: center;
+  color: crimson;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.box {
+  border: 2px solid #000; /* Example border */
+  padding: 20px; /* Example padding */
+  /* Other styling properties for the box */
+}
