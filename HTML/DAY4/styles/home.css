@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  height: 125vh;
+  background-color: rgb(220, 236, 245);
+}
+.grid_container {
+  height: 90vh;
+  width: 90vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "diwali_sale blackfriday_sale fashion";
+  margin-top: 50px;
+  margin-left: 20px;
+}
+#diwali_sale {
+  grid-area: diwali_sale;
+  background-image: url(../images/diwali_sale.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#blackfriday_sale {
+  grid-area: blackfriday_sale;
+  background-image: url(../images/BlackFriday_sale.jpg);
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fashion {
+  display: flex;
+  /* grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "men_ethnic women_ethnic"
+    "women_kurta kids_ethnic";*/
+}
+#men_ethnic {
+  flex: 1;
+  /*grid-area: men_ethnic;*/
+  background-image: url(../images/men_kurta.jpg);
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+#women_ethnic {
+  flex: 1;
+  /* grid-area: women_ethnic;*/
+  background-image: url(../images/ladies_saree.jpg);
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+#women_kurta {
+  flex: 1;
+  /*grid-area: women_kurta;*/
+  background-image: url(../images/ladies_kurta.jpg);
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+#kids_ethnic {
+  flex: 1;
+  /*grid-area: kids_ethnic;*/
+  background-image: url(../images/kids_ethnic.jpg);
+  background-size: auto;
+  background-repeat: no-repeat;
+}

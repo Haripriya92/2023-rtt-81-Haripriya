@@ -1,0 +1,168 @@
+body {
+  height: 280vh;
+  width: 100vw;
+  background-color: black;
+  border: 1px solid white;
+}
+#logos {
+  position: absolute;
+  top: 25px;
+  left: 80%;
+  height: 10px;
+  width: 90px;
+}
+#logos a.fa-facebook {
+  color: rgb(150, 135, 135);
+}
+#logos a.fa-twitter {
+  color: rgb(150, 135, 135);
+}
+
+#logos a.fa-linkedin {
+  color: rgb(150, 135, 135);
+}
+#logos a.fa-github {
+  color: rgb(150, 135, 135);
+}
+#logos a.fa-instagram {
+  color: rgb(150, 135, 135);
+}
+#sized-image {
+  width: 200px;
+  height: 200px;
+}
+.head-container {
+  height: 1600px;
+  width: 1000px;
+  background-color: rgb(43, 39, 39);
+  color: white;
+  position: absolute;
+  top: 50px;
+  left: 200px;
+}
+.flex_box1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+#box1 {
+  flex: 1;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+#box2 {
+  flex: 1;
+}
+#box3 {
+  flex: 2;
+}
+#box4 {
+  flex: 2;
+}
+#box5 {
+  flex: 1;
+}
+#box4 li {
+  list-style-type: "✅ ";
+}
+.flex_box2 {
+  display: flex;
+  justify-content: space-evenly;
+}
+#box6 {
+  flex: 2;
+}
+#box7 {
+  flex: 1;
+}
+#box6 li {
+  list-style-type: "✅ ";
+}
+li {
+  border-bottom: 1px;
+  padding: 10px;
+}
+#intro_paragraph {
+  text-align: center;
+  margin-bottom: 100px;
+}
+progress {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  width: 30%;
+}
+progress {
+  height: 20px;
+  background-color: #ddd;
+  border-width: 100px;
+  overflow: hidden;
+}
+progress::-webkit-progress-bar {
+  background-color: #ddd;
+  border-width: 100px;
+}
+#skill1::-webkit-progress-value {
+  background-color: rgb(113, 113, 204);
+  border-width: 100px;
+}
+#skill2::-webkit-progress-value {
+  background-color: rgb(105, 105, 124);
+  border-width: 100px;
+}
+#skill3::-webkit-progress-value {
+  background-color: rgb(12, 224, 12);
+  border-width: 100px;
+}
+#skill4::-webkit-progress-value {
+  background-color: yellow;
+  border-width: 100px;
+}
+#skill5::-webkit-progress-value {
+  background-color: RED;
+  border-width: 100px;
+}
+.custom-box {
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 600px;
+  min-height: 1px;
+  background-color: #575252;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+}
+.custom-box::before {
+  content: "✅ ";
+  position: relative;
+  right: 235px;
+}
+.circleblue {
+  width: 30px;
+  height: 30px;
+  background-color: #3498db; /* Set the background color of the circle */
+  border-radius: 50%; /* Make it a circle by setting border-radius to 50% */
+}
+.circlegrey {
+  width: 30px;
+  height: 30px;
+  background-color: grey; /* Set the background color of the circle */
+  border-radius: 50%; /* Make it a circle by setting border-radius to 50% */
+}
+.circlegreen {
+  width: 30px;
+  height: 30px;
+  background-color: greenyellow; /* Set the background color of the circle */
+  border-radius: 50%; /* Make it a circle by setting border-radius to 50% */
+}
+.circleyellow {
+  width: 30px;
+  height: 30px;
+  background-color: yellow; /* Set the background color of the circle */
+  border-radius: 50%; /* Make it a circle by setting border-radius to 50% */
+}
+.circlebox {
+  display: flex;
+  align-items: center;
+  /* flex-direction: row;**/
+}
