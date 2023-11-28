@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="../useraccount.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form class="form" id="createAccount">
+        <h1 class="form_title">Create Account</h1>
+        <div class="form__input-group">
+          <input
+            type="text"
+            class="form__input"
+            id="username"
+            autofocus
+            placeholder="Username"
+          />
+        </div>
+        <div class="form__input-group">
+          <input
+            type="text"
+            class="form__input"
+            id="email"
+            autofocus
+            placeholder="Email Address"
+          />
+        </div>
+        <div class="form__input-group">
+          <label for="country">Country:</label>
+          <select id="country" class="form__input">
+            <option value="" disabled selected>Select your country</option>
+            <option value="us">United States</option>
+            <option value="ca">Canada</option>
+          </select>
+        </div>
+        <div class="form__input-group">
+          <input
+            type="password"
+            id="password"
+            class="form__input"
+            autofocus
+            placeholder="Password"
+          />
+        </div>
+        <div class="form__input-group">
+          <input
+            id="confirmPassword"
+            type="password"
+            class="form__input"
+            autofocus
+            placeholder="Confirm Password"
+          />
+        </div>
+        <button id="submitBtn" class="form__button" type="submit">
+          Continue
+        </button>
+        <p class="form__text">
+          <a class="form__link" href="./login.html" id="linkLogin"
+            >Already have an account? Sign in</a
+          >
+        </p>
+      </form>
+    </div>
+    <script src="../register.js"></script>
+  </body>
+</html>

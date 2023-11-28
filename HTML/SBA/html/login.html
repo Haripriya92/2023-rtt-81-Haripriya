@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="../useraccount.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form class="form" id="login">
+        <h1 class="form_title">Login</h1>
+        <div class="form__input-group">
+          <input
+            type="text"
+            id="usernameOrEmail"
+            class="form__input"
+            autofocus
+            placeholder="Username or email"
+          />
+        </div>
+        <div class="form__input-group">
+          <input
+            id="password"
+            type="password"
+            class="form__input"
+            autofocus
+            placeholder="Password"
+          />
+        </div>
+        <button id="loginBtn" class="form__button" type="submit">
+          Continue
+        </button>
+        <p class="form__text">
+          <a href="#" class="form__link">Forgot your password?</a>
+        </p>
+        <p class="form__text">
+          <a class="form__link" href="./register.html" id="linkCreateAccount"
+            >Dont have an account?Create account</a
+          >
+        </p>
+      </form>
+    </div>
+    <script src="../login.js"></script>
+  </body>
+</html>
