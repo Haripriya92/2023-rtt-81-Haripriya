@@ -10,11 +10,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 @Slf4j
 @Controller
 public class CustomerController {
     @Autowired
     private CustomerDao customerDao;
+
     @GetMapping("customer/create")
     public ModelAndView createCustomer(@RequestParam(required=false)String firstname,
                                        @RequestParam(required=false)String lastname,
@@ -45,6 +48,24 @@ public class CustomerController {
 
         log.info("In create customer with incoming args");
 
+        return response;
+    }
+
+    @GetMapping("/customer/search")
+    public ModelAndView search(@RequestParam(required = false) String search) {
+        ModelAndView response = new ModelAndView("customer/search");
+        log.info("In the customer search controller method:search parameter:"+search);
+        if(search!=null)
+        {
+            List<Customer> customers=customerDao.findByFirstName(search);
+            response.addObject("customerVar", customers);
+            response.addObject("search", search);
+            for (Customer customer :customers)
+            {
+                log.info("customer: id "+customer.getId()+" First Name "+customer.getFirstName()+" Last Name "+customer.getLastName());
+                log.info("customer: Phone "+customer.getPhone()+" City "+customer.getCity());
+            }
+        }
         return response;
     }
 }

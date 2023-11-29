@@ -18,13 +18,13 @@ public class EmployeeController {
     public ModelAndView createEmployee(@RequestParam String firstname,@RequestParam String lastname,
                                        @RequestParam String phonenumber,@RequestParam String city){
 
-    ModelAndView response=new ModelAndView("customer/e_register.jsp");
+    ModelAndView response=new ModelAndView("employee/e_register.jsp");
     return response;
 
 }
-    @GetMapping("customer/createSubmit")
+    @GetMapping("/employee/createSubmit")
     public ModelAndView createCustomerSubmit(CreateEmployeeFormBean form) {
-        ModelAndView response=new ModelAndView("/employeeRegister");
+        ModelAndView response=new ModelAndView("employee/e_register.jsp");
         Employee employee = new Employee();
         employee.setFirstName(form.getFirstname());
         employee.setLastName(form.getLastname());
