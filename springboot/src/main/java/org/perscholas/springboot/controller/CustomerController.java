@@ -5,7 +5,9 @@ import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.perscholas.springboot.database.dao.CustomerDao;
 import org.perscholas.springboot.database.entity.Customer;
+import org.perscholas.springboot.database.entity.User;
 import org.perscholas.springboot.formbean.CreateCustomerFormBean;
+import org.perscholas.springboot.security.AuthenticatedUserService;
 import org.perscholas.springboot.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,6 +28,9 @@ public class CustomerController {
 
     @Autowired
     private CustomerService customerService;
+    @Autowired
+    private AuthenticatedUserService authenticatedUserService;
+
 
     @GetMapping("/customer/create")
     public ModelAndView createCustomer(@RequestParam(required=false)String firstname,
@@ -111,6 +116,7 @@ public class CustomerController {
             form.setLastname(customer.getLastName());
             form.setPhone(customer.getPhone());
             form.setCity(customer.getCity());
+            form.setImageUrl(customer.getImageUrl());
         } else {
             log.warn("Customer with id " + customerId + " was not found") ;
         }
@@ -118,6 +124,23 @@ public class CustomerController {
         response.addObject("form", form);
 
         return response;
+
+    }
+    @GetMapping("/customer/myCustomers")
+    public void myCustomers() {
+        log.info("######################### In my customers #########################");
+
+        // 1) Use the authenticated user service to find the logged in user
+        User user = authenticatedUserService.loadCurrentUser();
+
+        // 2) Create a DAO method that will find by userId
+        // 3) use the authenticated user id to find a list of all customers created by this user
+        List<Customer> customers = customerDao.findByUserId(user.getId());
+
+        // 4) loop over the customers created and log.debug the customer id and customer last name
+        for ( Customer customer : customers ) {
+            log.debug("customer: id = " + customer.getId() + " last name = " + customer.getLastName());
+        }
 
     }
 

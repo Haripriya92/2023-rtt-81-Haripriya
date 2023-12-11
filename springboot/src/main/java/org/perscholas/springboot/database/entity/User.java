@@ -3,7 +3,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-    @Getter
+import java.util.Date;
+
+@Getter
     @Setter
     @Entity
     @Table(name = "users")
@@ -19,4 +21,8 @@ import lombok.Setter;
 
         @Column(name = "password")
         private String password;
+
+        @Column(name = "create_date")
+        @Temporal(TemporalType.DATE)
+        private Date createDate;
 }

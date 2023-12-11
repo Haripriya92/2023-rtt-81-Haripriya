@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
           crossorigin="anonymous">
@@ -28,9 +30,27 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/employee/create">Create Employee</a>
                 </li>
+                <sec:authorize access="!isAuthenticated()">
                  <li class="nav-item">
-                                    <a class="nav-link" href="/auth/register">Create User</a>
-                                </li>
+                 <a class="nav-link" href="/auth/register">Create User</a>
+                  </li>
+                   </sec:authorize>
+                  <sec:authorize access="hasAnyAuthority('ADMIN')">
+                    <li class="nav-item">
+                      <a class="nav-link" href="">Admin</a>
+                       </li>
+                        </sec:authorize>
+                        <sec:authorize access="isAuthenticated()">
+                         <li class="nav-item">
+                        <a class="nav-link" href="/auth/logout">Logout</a>
+                         </li>
+                         <li class="nav-item">
+                          <a class="nav-link" href=""><sec:authentication property="principal.username" /></a>
+                           </li>
+                          </sec:authorize>
+                  <li class="nav-item">
+                 <a class="nav-link" href="/admin/index">Secured Request</a>
+                        </li>
             </ul>
         </div>
     </div>

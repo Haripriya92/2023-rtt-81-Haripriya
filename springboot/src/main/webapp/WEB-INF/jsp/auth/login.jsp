@@ -10,7 +10,17 @@
         </div>
     </div>
 </section>
-
+<c:if test="${param['error'] eq ''}">
+    <section class="pt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <div class="alert alert-danger w-100 mb-0">Invalid Username or Password</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</c:if>
 <section class="pt-5 pb-5">
     <div class="container">
         <div class="row justify-content-center">
@@ -34,5 +44,4 @@
             </div>
         </div>
     </div>
-</section>
 <jsp:include page="../include/footer.jsp"/>

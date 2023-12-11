@@ -64,7 +64,17 @@
                                     </c:forEach>
                                 </div>
                             </c:if>
-
+ <div class="mt-3">
+                    <label for="imageUrl" class="form-label">ImageUrl</label>
+                     <input type="text" class="form-control" id="imageUrl" name="imageUrl" value="${form.imageUrl}" >
+                </div>
+                 <c:if test="${errors.hasFieldErrors('imageUrl')}">
+                                                <div style="color:red">
+                                                    <c:forEach items="${errors.getFieldErrors('imageUrl')}" var="error">
+                                                        ${error.defaultMessage}<br>
+                                                    </c:forEach>
+                                                </div>
+                                            </c:if>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
